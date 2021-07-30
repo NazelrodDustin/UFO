@@ -3,3 +3,7 @@
 gamePaused = false;
 twoPlayer = false;
 playerPlacedObjects = array_create(0);
+
+worldAngle = -90;
+groundSurface = noone;
+
