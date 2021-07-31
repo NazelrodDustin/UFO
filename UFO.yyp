@@ -3,6 +3,7 @@
     {"id":{"name":"spr_uiDynamicBoxLeft","path":"sprites/spr_uiDynamicBoxLeft/spr_uiDynamicBoxLeft.yy",},"order":3,},
     {"id":{"name":"scr_ui_dt_sort","path":"scripts/scr_ui_dt_sort/scr_ui_dt_sort.yy",},"order":30,},
     {"id":{"name":"spr_uiDynamicBoxRight","path":"sprites/spr_uiDynamicBoxRight/spr_uiDynamicBoxRight.yy",},"order":4,},
+    {"id":{"name":"spr_baricade","path":"sprites/spr_baricade/spr_baricade.yy",},"order":1,},
     {"id":{"name":"obj_uiWindowDebug","path":"objects/obj_uiWindowDebug/obj_uiWindowDebug.yy",},"order":0,},
     {"id":{"name":"spr_ftSmall","path":"sprites/spr_ftSmall/spr_ftSmall.yy",},"order":0,},
     {"id":{"name":"scr_ui_dt_add_string_id","path":"scripts/scr_ui_dt_add_string_id/scr_ui_dt_add_string_id.yy",},"order":1,},

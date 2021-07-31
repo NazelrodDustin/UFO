@@ -24,7 +24,7 @@ void main(){
 	
 	vec4 color = texture2D(gm_BaseTexture, v_vTexcoord);
 	vec4 finalColor = texture2D(u_uPlaidTex, vec2(xPoint, yPoint));
-	if (color.a < 1.0){
+	if (color.a < 0.5){
 		finalColor = vec4(0.0, 0.0, 0.0, 0.0);
 	}
 	
