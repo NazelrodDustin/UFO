@@ -4,7 +4,7 @@
 if (surface_exists(groundSurface)){
 	var hh = window_get_height();
 	shader_set(shd_unmovingPlaid);
-	setup_plaid_texture(spr_groundtexture, 0);
+	setup_plaid_texture(spr_groundTexture, 0);
 	
 	draw_surface(groundSurface, 0, hh * (3 / 4));
 	shader_reset();

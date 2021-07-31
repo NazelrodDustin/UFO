@@ -13,7 +13,7 @@
   "bbox_bottom": 63,
   "HTile": false,
   "VTile": false,
-  "For3D": true,
+  "For3D": false,
   "width": 64,
   "height": 64,
   "textureGroupId": {
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4b983c20-647f-4571-9cd0-195937cefc1f","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4b983c20-647f-4571-9cd0-195937cefc1f","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},"LayerId":{"name":"e14ba081-d56b-4735-a5b5-7175dbd73a87","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_groundTexture","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},"resourceVersion":"1.0","name":"4b983c20-647f-4571-9cd0-195937cefc1f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"03677a05-a089-4f8e-8087-bd94bdbb1edf","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"03677a05-a089-4f8e-8087-bd94bdbb1edf","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"LayerId":{"name":"c1984a7e-4ca3-454e-b5e2-b0af68f0eae6","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"resourceVersion":"1.0","name":"03677a05-a089-4f8e-8087-bd94bdbb1edf","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_groundTexture","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},
+    "spriteId": {"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b9f66717-dc16-4d12-95b8-754c7f216e0f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4b983c20-647f-4571-9cd0-195937cefc1f","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"65f8148c-e843-4ec3-ad66-d649c656de2d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"03677a05-a089-4f8e-8087-bd94bdbb1edf","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_groundTexture","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},
+    "parent": {"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_groundTexture",
+    "name": "spr_metalTexture",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e14ba081-d56b-4735-a5b5-7175dbd73a87","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c1984a7e-4ca3-454e-b5e2-b0af68f0eae6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_groundTexture",
+  "name": "spr_metalTexture",
   "tags": [],
   "resourceType": "GMSprite",
 }
