@@ -12,7 +12,7 @@ enum SHADERS{
 	unmovingPlaid	
 }
 
-global.shaderUniforms = array_create(SHADERS);
+global.shaderUniforms = array_create(0);
 
 #region Unmoving Plaid
 enum UNMOVINGPLAID{
@@ -26,3 +26,4 @@ global.shaderUniforms[SHADERS.unmovingPlaid] = [shader_get_sampler_index(shd_unm
 												shader_get_uniform(shd_unmovingPlaid, "u_uTexHeight")];
 #endregion
 #endregion
+show_debug_message(global.shaderUniforms);

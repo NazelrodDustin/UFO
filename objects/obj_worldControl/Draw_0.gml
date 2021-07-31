@@ -3,7 +3,7 @@
 
 if (surface_exists(groundSurface)){
 	shader_set(shd_unmovingPlaid);
-	setup_plaid_texture(spr_groundtexture);
+	setup_plaid_texture(spr_groundtexture, 0);
 	
 	draw_surface(groundSurface, 0, 720 / 2);
 	shader_reset();
