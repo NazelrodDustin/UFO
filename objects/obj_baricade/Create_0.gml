@@ -3,7 +3,7 @@
 event_inherited();
 
 x = round(window_get_width() / 2);
-y = round((window_get_width() * 10) + (window_get_height() * .75));
+y = 1000 + (window_get_height() * .75);//round((window_get_width() * 10) + (window_get_height() * .75));
 
 healthAmt = 100;
 image_angle = 0;

@@ -15,7 +15,7 @@ if (surface_exists(groundSurface)){
 	var yy = (ww * 10);
 	var steps = 512;
 	var radius = ww * 10;
-	var startOffset = 0;//floor(point_direction(xx, yy, ww, hh));
+	var startOffset = floor(point_direction(xx, yy, ww, hh));
 	var drawAmount = 180 - (startOffset * 2);
 	show_debug_message(startOffset);
 	show_debug_message(drawAmount);
