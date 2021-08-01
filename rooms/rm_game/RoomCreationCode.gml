@@ -1,11 +1,12 @@
-room_width = display_get_width()
-room_height = display_get_height();
-window_set_rectangle(0, 0, room_width, room_height);
-surface_resize(application_surface, room_width, room_height);
+var dw = display_get_width();
+var dh = display_get_height();
+room_width = dw;
+room_height = dh;
+window_set_rectangle(0, 0, dw, dh);
+surface_resize(application_surface, dw, dh);
+
+instance_create_layer(0, 0, layer_get_id("Instances"), obj_worldControl);
+instance_create_layer(0, 0, layer_get_id("Instances"), obj_baricade);
 
 
-show_debug_message(display_aa);
-var aaLevel = display_aa > 2 ? (display_aa > 6 ? 8 : 4) : 2
-
-display_reset(aaLevel, true);
 //instance_create_depth(0, 0, 0, obj_debugCon);
