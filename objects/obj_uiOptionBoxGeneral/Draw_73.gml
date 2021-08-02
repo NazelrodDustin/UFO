@@ -41,5 +41,6 @@ if (selectingWithArrows){
 	draw_rectangle(x + optionBoxX + 6, y + optionBoxY + optionArray[selectingWithArrowsPosition,3], x + optionBoxX + (optionBoxWidth * 16) + 32 - 8, y + optionBoxY + optionArray[selectingWithArrowsPosition,4], 0);
 	draw_set_alpha(1);	
 }
+
 	
 		

@@ -11,7 +11,6 @@ if (mouse_check_button_released(mb_left)){
 	}
 }
 
-////show_debug_message(optionActivate);
 //Activate the option that has been clicked
 if (optionActivate != -1){
 	//Store the id of the instance who owns the options
@@ -29,8 +28,8 @@ if (optionActivate != -1){
 }
 
 //Hide the option box when the mouse is clicked anywhere off of the box
-if (mouse_check_button_pressed(mb_left) || mouse_check_button_pressed(mb_right)){
-	var mouseIsOutsideOfOptionBox = !((mouse_y > (y + optionBoxY) && mouse_y < (y + optionBoxY + (optionBoxHeight * 16) + 32)) && (mouse_x > (x + optionBoxX) && mouse_x < (x + optionBoxX + (optionBoxWidth * 16) + 32)))
+if (mouse_check_button_pressed(mb_left) || mouse_check_button_released(mb_right)){
+	var mouseIsOutsideOfOptionBox = !point_in_rectangle(mouse_x + 8, mouse_y + 8, x, y, x + optionBoxX + (optionBoxWidth * 16) + 32, y + optionBoxY +  (optionBoxHeight * 16) + 32);
 	
 	if (mouseIsOutsideOfOptionBox){
 		instance_destroy();

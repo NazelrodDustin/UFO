@@ -672,7 +672,7 @@ if (currentScreen == "saveLayouts" && savingLayout){
 #region optionBox
 	
 	//Check for clicks on the variable slots
-	if (mouse_check_button_pressed(mb_right) && !instance_exists(itemSlotOptionBox) && mouseIsInsideWindow){
+	if (mouse_check_button_pressed(mb_right) && mouseIsInsideWindow){
 		if (slotThatMouseIsOver != -1){
 			variableSlotForOptionBox = slotThatMouseIsOver;
 			variableSlotOptionBox = scr_ui_option_box_create();
@@ -860,7 +860,7 @@ if (currentScreen == "saveLayouts" && savingLayout){
 						#region Expanding 1D arrays
 						if (is1DArray){
 							varWatchList[variableSlotForOptionBox,1] = !varWatchList[variableSlotForOptionBox,1];	
-					
+
 							//Find how many slots need to be moved
 							var slotsNeededToBeMoved = 0;
 					
@@ -871,7 +871,7 @@ if (currentScreen == "saveLayouts" && savingLayout){
 									break;	
 								}
 							}
-					
+							
 							//Move slots back
 							if (slotsNeededToBeMoved > 0){	
 								for (i = variableSlotForOptionBox + slotsNeededToBeMoved; i > 0; i--){
@@ -888,7 +888,7 @@ if (currentScreen == "saveLayouts" && savingLayout){
 									}
 								}
 							}
-					
+
 							//Fill the empty slots with the array information
 							var currentArrayIndex = 0;
 					

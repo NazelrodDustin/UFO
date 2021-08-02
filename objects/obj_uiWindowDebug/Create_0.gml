@@ -36,7 +36,7 @@ slotHighlightY = 0;
 
 debugInstance = noone;
 
-variableWatchListInitialSize = 100;
+variableWatchListInitialSize = 1000;
 
 for (i = 0; i < variableWatchListInitialSize; i++){
 	debug_window_clear_watchlist_slot(i);

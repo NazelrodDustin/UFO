@@ -16,13 +16,17 @@ if (global.devMode){
 		var windowY = 0;
 		
 		globalDebugWindow = instance_create_layer(windowX + 20, windowY + 20, debugLayer, obj_uiWindowDebug);
-		globalDebugWindow.debugInstance = id;
+		globalDebugWindow.debugInstance = obj_worldControl;
 		
 		with(globalDebugWindow){
 			//Add starting watch list
-			//varWatchList[slotIndex,0] = "debugLayer"; //String name of the variable
+			varWatchList[0,0] = "gamePaused"; //String name of the variable
+			varWatchList[1,0] = "twoPlayer"; //String name of the variable
+			varWatchList[2,0] = "worldAngle"; //String name of the variable
+			varWatchList[3,0] = "groundSurface"; //String name of the variable
+			varWatchList[4,0] = "playerPlacedObjects"; //String name of the variable
 			
-			//setVariableNumber();
+			setVariableNumber();
 		}
 	}
 }
