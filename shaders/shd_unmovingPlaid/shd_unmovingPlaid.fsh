@@ -21,16 +21,17 @@ void main(){
 	float xPoint = (mathMod(v_vTexpos.x, u_uTexWidth)) / u_uTexWidth;
 	float yPoint = (mathMod(v_vTexpos.y, u_uTexHeight)) / u_uTexHeight;
 	
-	
 	vec4 color = texture2D(gm_BaseTexture, v_vTexcoord);
 	vec4 finalColor = texture2D(u_uPlaidTex, vec2(xPoint, yPoint));
+	
+	if (color.r == 0.0){
+		finalColor = vec4(0.0, 0.0, 0.0, 1.0);
+	}
+	
+
 	if (color.a < 0.5){
 		finalColor = vec4(0.0, 0.0, 0.0, 0.0);
 	}
-	
-	//if (color.r == 0.0){
-	//	finalColor = vec4(0.0, 0.0, 0.0, 1.0);
-	//}
 	
     gl_FragColor = finalColor;
 }
