@@ -103,12 +103,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7646138f-625b-418e-988e-286388232503","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7646138f-625b-418e-988e-286388232503","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"LayerId":{"name":"3e5c76fd-0821-495b-ad2d-b8bfffc7eded","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"resourceVersion":"1.0","name":"7646138f-625b-418e-988e-286388232503","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a4cd13f4-9994-4759-8304-9c83296006ca","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a4cd13f4-9994-4759-8304-9c83296006ca","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},"LayerId":{"name":"55743c4c-4af0-4e69-beb2-6ba31805aa13","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_skinTexture","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},"resourceVersion":"1.0","name":"a4cd13f4-9994-4759-8304-9c83296006ca","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},
+    "spriteId": {"name":"spr_skinTexture","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -120,7 +120,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"09e28332-9975-42d3-b5cb-56b3bd71ba16","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7646138f-625b-418e-988e-286388232503","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0a38c180-b782-4a73-bc4e-e05a528bb48d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a4cd13f4-9994-4759-8304-9c83296006ca","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -137,14 +137,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},
+    "parent": {"name":"spr_skinTexture","path":"sprites/spr_skinTexture/spr_skinTexture.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_metalTexture",
+    "name": "spr_skinTexture",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3e5c76fd-0821-495b-ad2d-b8bfffc7eded","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"55743c4c-4af0-4e69-beb2-6ba31805aa13","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -152,7 +152,7 @@
     "path": "folders/Sprites/Unmoving Textures.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_metalTexture",
+  "name": "spr_skinTexture",
   "tags": [],
   "resourceType": "GMSprite",
 }

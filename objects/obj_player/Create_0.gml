@@ -1,3 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-image_angle++;
+
+// Inherit the parent event
+event_inherited();
+
+plaidTexture = spr_skinTexture;

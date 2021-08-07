@@ -4,8 +4,13 @@ gamePaused = false;
 twoPlayer = false;
 playerPlacedObjects = array_create(0);
 
-worldAngle = -90;
+worldAngle1 = -90;
+worldAngle2 = -90;
+grassSurface = noone;
 groundSurface = noone;
+
+connected = false;
+
 
 #region shaders
 enum SHADERS{
@@ -27,3 +32,5 @@ global.shaderUniforms[SHADERS.unmovingPlaid] = [shader_get_sampler_index(shd_unm
 #endregion
 #endregion
 show_debug_message(global.shaderUniforms);
+
+alarm[0] = 60;

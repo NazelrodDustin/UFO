@@ -6,4 +6,4 @@ y = round((window_get_width() * 10) + (window_get_height() * .75));
 
 radius = (window_get_width() * 10);
 
-image_angle = floor(point_direction(x, y, window_get_width(), window_get_height())) - 90;
+plaidTexture = spr_defaultTexture;
