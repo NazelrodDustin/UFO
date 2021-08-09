@@ -29,7 +29,7 @@ void main(){
 	}
 	
 
-	if (color.a < 0.5){
+	if (color.a < 0.05){
 		finalColor = vec4(0.0, 0.0, 0.0, 0.0);
 	}
 	

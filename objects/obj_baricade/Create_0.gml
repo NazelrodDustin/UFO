@@ -5,3 +5,4 @@
 event_inherited();
 
 plaidTexture = spr_metalTexture;
+widthTarget = 64;

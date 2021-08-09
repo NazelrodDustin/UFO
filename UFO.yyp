@@ -41,6 +41,7 @@
     {"id":{"name":"scr_ui_option_box_create","path":"scripts/scr_ui_option_box_create/scr_ui_option_box_create.yy",},"order":1,},
     {"id":{"name":"scr_ui_dt_draw","path":"scripts/scr_ui_dt_draw/scr_ui_dt_draw.yy",},"order":14,},
     {"id":{"name":"scr_ui_dt_add_string_no_id","path":"scripts/scr_ui_dt_add_string_no_id/scr_ui_dt_add_string_no_id.yy",},"order":2,},
+    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":5,},
     {"id":{"name":"spr_ui9SliceThin","path":"sprites/spr_ui9SliceThin/spr_ui9SliceThin.yy",},"order":2,},
     {"id":{"name":"scr_ui_dt_clear_part","path":"scripts/scr_ui_dt_clear_part/scr_ui_dt_clear_part.yy",},"order":11,},
     {"id":{"name":"spr_uiDynamicBoxBottomLeft","path":"sprites/spr_uiDynamicBoxBottomLeft/spr_uiDynamicBoxBottomLeft.yy",},"order":1,},
