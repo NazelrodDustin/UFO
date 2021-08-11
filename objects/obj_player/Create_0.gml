@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+show_debug_message("Hit Before");
+
+
 plaidTexture = spr_skinTexture;
 widthTarget = 64;
 
@@ -65,3 +68,4 @@ function changeState(newState){
 		
 	}
 }
+show_debug_message("Hit After");

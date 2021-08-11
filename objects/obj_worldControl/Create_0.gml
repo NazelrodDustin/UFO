@@ -1,17 +1,38 @@
 /// @description Insert description here
 // You can write your code in this editor
+global.worldControl = id;
+
+ww = window_get_width();
+hh = window_get_height();
+xx = ww / 2;
+yy = (ww * 10);
+
 gamePaused = false;
 twoPlayer = false;
-playerPlacedObjects = array_create(0);
+
+player1Rotation = 0;
+player2Rotation = 0;
+
+moveLeftBound = point_direction(xx, yy, ww / 4, hh / 2) - 90;
+moveRightBound = point_direction(xx, yy, ww * (3 / 4), hh / 2) - 90;
 
 groundSurface = noone;
 
 connected = false;
 
-ww = window_get_width();
-hh = window_get_height();
 
-#region shaders
+
+
+
+#region //Layers
+enum LAYERS{
+	instances
+}
+
+global.layers[LAYERS.instances] = layer_get_id("Instances");
+#endregion
+
+#region //Shaders
 enum SHADERS{
 	unmovingPlaid	
 }
@@ -30,8 +51,7 @@ global.shaderUniforms[SHADERS.unmovingPlaid] = [shader_get_sampler_index(shd_unm
 #endregion
 #endregion
 
-global.worldControl = id;
-
+#region //Camera Setups
 view_enabled = true;
 
 view_visible[0] = true;
@@ -51,5 +71,19 @@ view_wport[1] = ww;
 
 view_hport[0] = hh / 2;
 view_hport[1] = hh / 2;
+#endregion
+
+#region //functions
+
+function rotateWorld(playerOne, amount){
+	if (playerOne){
+		player1Rotation += amount;
+		player1Rotation = player1Rotation % 360;
+	}else{
+		player2Rotation += amount;
+		player2Rotation = player2Rotation % 360;
+	}
+}
+#endregion
 
 alarm[0] = 60;

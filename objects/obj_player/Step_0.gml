@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+event_inherited();
 
 var moveAmt = 0;
 if (leftPressed){
@@ -61,7 +61,13 @@ if (!leftPressed && !rightPressed){
 }
 
 image_angle += moveAmt;
-
+if (moveAmt != 0){
+	var screenRotation = image_angle + (firstPlayer ? global.worldControl.player1Rotation : global.worldControl.player2Rotation); 
+	if ((screenRotation >= global.worldControl.moveLeftBound && moveAmt > 0) || (screenRotation <= global.worldControl.moveRightBound && moveAmt < 0)){
+		show_debug_message("hit");
+		global.worldControl.rotateWorld(firstPlayer, -moveAmt);
+	}
+}
 
 #region Anim Control
 if (state == "moving"){
@@ -93,3 +99,7 @@ if (state == "resurecting"){
 	}
 }
 #endregion
+
+if (instance_number(object_index) == 1){
+	instance_create_layer(x, y, global.layers[LAYERS.instances], object_index);
+}

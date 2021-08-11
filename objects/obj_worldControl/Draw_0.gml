@@ -7,8 +7,7 @@ if (surface_exists(groundSurface)){
 	draw_surface(groundSurface, (-ww * 2) - (ww / 2), hh * (3 / 4));
 	draw_surface(groundSurface, (ww * 2) - (ww / 2), hh * (3 / 4));
 }else{
-	var xx = ww / 2;
-	var yy = (ww * 10);
+
 	var steps = 512;
 	var radius = ww * 10;
 	var startOffset = floor(point_direction(xx, yy, ww, hh));
