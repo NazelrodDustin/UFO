@@ -1,6 +1,0 @@
-///General
-
-myWindow = -4;
-
-
-

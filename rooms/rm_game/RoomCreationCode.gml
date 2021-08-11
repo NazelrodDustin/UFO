@@ -8,8 +8,4 @@ surface_resize(application_surface, dw, dh);
 instance_create_layer(0, 0, layer_get_id("Instances"), obj_worldControl);
 instance_create_layer(0, 0, layer_get_id("Instances"), obj_player);
 
-
-//instance_create_depth(0, 0, 0, obj_debugCon);
-
-
 //0A0719
