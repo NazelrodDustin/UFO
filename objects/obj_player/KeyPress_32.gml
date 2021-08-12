@@ -6,4 +6,6 @@ if (firstPlayer){
 
 	newInstance.image_angle = image_angle;
 	newInstance.image_xscale = image_xscale;
+	
+	sound_effect_play_varied_sample_centered(obj_soundControl.soundBarrierPlace, true);
 }
