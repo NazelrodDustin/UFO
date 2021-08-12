@@ -18,4 +18,6 @@ p1AngleToDraw = 0;
 p2AngleToDraw = 0;
 
 circumference = pi * 2 * radius;
+inP1Cam = false;
+inP2Cam = false;
 

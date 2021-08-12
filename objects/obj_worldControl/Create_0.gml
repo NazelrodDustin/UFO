@@ -85,3 +85,8 @@ function rotateWorld(playerOne, amount){
 instance_create_layer(x, y, global.layers[LAYERS.instances], obj_drawControl);
 
 alarm[0] = 60;
+
+
+time = current_time;
+
+audio_play_sound(snd_barrierDamage1, 1, false);

@@ -3,8 +3,10 @@
 event_inherited();
 
 if (firstPlayer){
-	//leftPressed = true;	
+	inP1Cam = true;
+	leftPressed = true;	
 }else{
+	inP2Cam = true;
 	//rightPressed = true;
 }
 
@@ -79,7 +81,6 @@ if (abs(image_angle) > 360){
 if (moveAmt != 0){
 	var screenRotation = image_angle + (firstPlayer ? global.worldControl.player1Rotation : global.worldControl.player2Rotation); 
 	if ((screenRotation >= global.worldControl.moveLeftBound && moveAmt > 0) || (screenRotation <= global.worldControl.moveRightBound && moveAmt < 0)){
-		show_debug_message("hit");
 		global.worldControl.rotateWorld(firstPlayer, -moveAmt);
 	}
 }
