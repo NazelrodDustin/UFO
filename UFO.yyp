@@ -42,7 +42,7 @@
     {"id":{"name":"snd_zombieGeneral3","path":"sounds/snd_zombieGeneral3/snd_zombieGeneral3.yy",},"order":2,},
     {"id":{"name":"spr_metalTexture","path":"sprites/spr_metalTexture/spr_metalTexture.yy",},"order":3,},
     {"id":{"name":"snd_laserRifle3","path":"sounds/snd_laserRifle3/snd_laserRifle3.yy",},"order":2,},
-    {"id":{"name":"scr_soundEffects","path":"scripts/scr_soundEffects/scr_soundEffects.yy",},"order":2,},
+    {"id":{"name":"scr_soundEffects","path":"scripts/scr_soundEffects/scr_soundEffects.yy",},"order":0,},
     {"id":{"name":"snd_barrierDamage4","path":"sounds/snd_barrierDamage4/snd_barrierDamage4.yy",},"order":3,},
     {"id":{"name":"shd_unmovingPlaid","path":"shaders/shd_unmovingPlaid/shd_unmovingPlaid.yy",},"order":0,},
     {"id":{"name":"scr_setup_shaders","path":"scripts/scr_setup_shaders/scr_setup_shaders.yy",},"order":0,},

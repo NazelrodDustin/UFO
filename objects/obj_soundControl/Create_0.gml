@@ -1,7 +1,20 @@
-audio_listener_orientation(0, 1, 0, 0, 0, 1);
-audio_falloff_set_model(audio_falloff_exponent_distance);
+#region Create varied samples
 
-//Create varied samples
-soundLazerRifle = sound_effect_create_varied_sample(200, 600, 2, "snd_laserRifle", 1, .1, .01, 50);	
+soundLaserRifle = sound_effect_create("snd_laserRifle", 1, .1, .01, 100);	
 
-soundBarrierPlace = sound_effect_create_varied_sample(200, 600, 2, "snd_barrierPlace", .1, .1, .01, 50);	
+soundBarrierPlace = sound_effect_create("snd_barrierPlace", 1, .1, .01, 50);	
+
+#endregion
+
+
+
+//Music
+framesBetweenMusic = irandom_range(3600, 5000);
+musicTimer = 0;
+songLength = audio_sound_length(snd_song);
+playSong = true;
+ambienceTransitionTime = round(songLength / 12);
+ambienceTransitionPoint = songLength - ambienceTransitionTime;
+ambience = -1;
+
+

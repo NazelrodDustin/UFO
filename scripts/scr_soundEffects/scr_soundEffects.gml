@@ -10,7 +10,7 @@ function sound_effect_add_variation(arrayId, soundIndex) {
 
 	var arraySize = array_length(arrayId);
 
-	for (i = 8; i < arraySize; i++){
+	for (i = 5; i < arraySize; i++){
 		if (arrayId[i] == -1){
 			arrayId[@ i] = soundIndex;
 			break;
@@ -18,14 +18,8 @@ function sound_effect_add_variation(arrayId, soundIndex) {
 	}
 }
 
-/// @func sound_effect_create_varied_sample(falloff_ref, falloff_max, falloff_factor, baseName, gain, pitchRandom, volRandom, priority)
-/// @Creates an array to hold a sound effect's round robins and sets up the falloff settings
-/// @param falloff_ref
-/// The distance in which the sound starts falling off 
-/// @param falloff_max
-/// The max distance that the sound can be heard from the listener position        
-/// @param falloff_factor 
-/// The number(1 by default) that the falloff model uses to calculation the falloff curve of the sound effect
+/// @func sound_effect_create(baseName, gain, pitchRandom, volRandom, priority)
+/// @Creates an array to hold a sound effect's round robins 
 /// @param baseName
 /// The string name for the sound resource minus the number for parsing and adding all the variations
 /// @param gain
@@ -35,7 +29,7 @@ function sound_effect_add_variation(arrayId, soundIndex) {
 /// @param volRandom
 /// To what degree the volume of the samples vary
 /// @param priority
-function sound_effect_create_varied_sample(falloffRef, falloffMax, falloffFactor, baseName, gain, pitchRandom, volRandom, priority) {
+function sound_effect_create(baseName, gain, pitchRandom, volRandom, priority) {
 	var newEffectArray = array_create(20, -1);
 
 	newEffectArray[@ 0] = 0; //Round robin position
@@ -43,9 +37,6 @@ function sound_effect_create_varied_sample(falloffRef, falloffMax, falloffFactor
 	newEffectArray[@ 2] = pitchRandom;
 	newEffectArray[@ 3] = volRandom;
 	newEffectArray[@ 4] = priority;
-	newEffectArray[@ 5] = falloffRef;
-	newEffectArray[@ 6] = falloffMax;
-	newEffectArray[@ 7] = falloffFactor;
 
 	//Parse through the sound names and add existing samples
 	var maxSampleCheck = 50; //I don't think there will ever be a sound with more than 50 variations??
@@ -75,7 +66,7 @@ function sound_effect_get_rr_number(arrayId) {
 	var rrNumber = 0;
 	var arraySize = array_length(arrayId);
 
-	for (i = 8; i < arraySize; i++){
+	for (i = 5; i < arraySize; i++){
 		if (arrayId[i] != -1){
 			rrNumber ++;	
 		}else{
@@ -87,35 +78,33 @@ function sound_effect_get_rr_number(arrayId) {
 }
 
 
-/// @func sound_effect_play_varied_sample(arrayId, x, y, loop)
+/// @func sound_effect_play(arrayId, loop)
 /// @desc Plays a variation of a sound effect within a given sound effect array and returns the id of the sound
 /// @param arrayId
-/// @param x 
-/// @param y 
 /// @param loop 
 
-function sound_effect_play_varied_sample(arrayId, xx, yy, loop) {
+function sound_effect_play(arrayId, loop){
 	if (!is_array(arrayId)){
 		show_debug_message("Failed to play sound effect variation, array doesn't exist.");
 		exit;
 	}
 
-	var falloffRef = arrayId[5];
-	var falloffMax = arrayId[6];
-	var falloffFactor = arrayId[7];
+	var rrPosition = arrayId[0];
+	//show_message("RR Pos: " + string(rrPosition));
+	var soundToPlay = arrayId[5 + rrPosition];
+	//show_message("Sound: " + string(soundToPlay));
+	var gainBase = arrayId[1];
 	var pitchRandom = arrayId[2];
 	var pitchRandomAdd = random_range(-(pitchRandom), pitchRandom);
-	var gainBase = arrayId[1];
 	var volRandom = arrayId[3];
 	var volRandomized = random_range(gainBase - volRandom, gainBase);
-	var rrPosition = arrayId[0];
-	var soundToPlay = arrayId[8 + rrPosition];
 	var priority = arrayId[4];
 
 	//Attempt to find a variation of the sound that is not playing
 	var rrNumber = sound_effect_get_rr_number(arrayId);
+	//show_message("RR Num:" + string(rrNumber));
 
-	for (i = 8; i < 8 + rrNumber; i++){
+	for (i = 5; i < 5 + rrNumber; i++){
 		if (!audio_is_playing(arrayId[i])){
 			soundToPlay = arrayId[i];
 			break;
@@ -123,7 +112,7 @@ function sound_effect_play_varied_sample(arrayId, xx, yy, loop) {
 	}
 
 	//Play the sound 
-	var soundEffect = audio_play_sound_at(soundToPlay, xx, yy, 0, falloffRef, falloffMax, falloffFactor, loop, priority); 
+	var soundEffect = audio_play_sound(soundToPlay, priority, loop); 
 	audio_sound_gain(soundEffect, volRandomized, 0);
 	audio_sound_pitch(soundEffect, 1 + pitchRandomAdd);
 	//Randomize RR position
@@ -139,40 +128,7 @@ function sound_effect_play_varied_sample(arrayId, xx, yy, loop) {
 	return soundEffect;
 }
 
-/// @func sound_effect_play_varied_sample_centered(arrayId, loop)
-/// @desc Plays a variation of a sound effect within a given sound effect array at the center position of the center
-/// @param arrayId
-/// @param loop 
-
-function sound_effect_play_varied_sample_centered(arrayId, loop) {
-	if (!is_array(arrayId)){
-		show_debug_message("Failed to play sound effect variation, array doesn't exist.");
-		exit;
-	}
-
-	var xx = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0]) / 2);
-	var yy = camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0]) / 2);
-
-	sound_effect_play_varied_sample(arrayId, xx, yy, loop);
-}
 
 
-/// @func sound_effect_set_falloff_settings(arrayId, falloff_ref, falloff_max, falloff_factor)
-/// @desc Sets falloff settings of a given sound effect 
-/// @param arrayId
-/// @param falloff_ref
-/// @param falloff_max
-/// @param falloff_factor
-
-function sound_effect_set_falloff_settings(arrayId, falloffRef, falloffMax, falloffFactor) {
-	if (!is_array(arrayId)){
-		show_debug_message("Failed to set sound effect falloff, array doesn't exist.");
-		exit;
-	}
-
-	arrayId[@ 5] = falloffRef;
-	arrayId[@ 6] = falloffMax;
-	arrayId[@ 7] = falloffFactor;
-}
 
 
