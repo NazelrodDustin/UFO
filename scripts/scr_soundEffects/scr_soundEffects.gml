@@ -119,8 +119,12 @@ function sound_effect_play(arrayId, loop){
 	var oldRR = rrPosition;
 	var newRR = oldRR;
 
-	while (oldRR == newRR){
-		newRR = irandom(rrNumber - 1);	
+	if (rrNumber > 1){
+		while (oldRR == newRR){
+			newRR = irandom(rrNumber - 1);	
+		}
+	}else{
+		newRR = 0;	
 	}
 
 	arrayId[@ 0] = newRR;

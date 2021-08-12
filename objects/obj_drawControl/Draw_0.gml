@@ -53,7 +53,11 @@ if (surface_exists(p1Surf) && surface_exists(p2Surf)){
 	setup_plaid_texture(spr_metalTexture, 0);
 	
 	with(obj_barricade){
-			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
+	}
+	
+	with(obj_radioTower){
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
 	}
 	
 	setup_plaid_texture(spr_zombieSkinTexture, 0);

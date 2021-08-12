@@ -1,4 +1,4 @@
-var songGain = 0;
+/*var songGain = 0;
 var ambienceGain = 0;
 var songTrackPos = 0;
 

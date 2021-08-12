@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @desc Barrier 
 
 if (firstPlayer){
 	var newInstance = instance_create_layer(x, y, global.layers[LAYERS.instances], obj_barricade);

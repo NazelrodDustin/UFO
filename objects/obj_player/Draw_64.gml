@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 var secondOffset = (firstPlayer ? 0 : global.worldControl.hh / 2);
 
 draw_text(10, secondOffset + 10, string(image_angle));
