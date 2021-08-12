@@ -60,6 +60,10 @@ if (surface_exists(p1Surf) && surface_exists(p2Surf)){
 		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
 	}
 	
+		with(obj_ufo){
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
+	}
+	
 	setup_plaid_texture(spr_zombieSkinTexture, 0);
 	
 	with(obj_zombie){

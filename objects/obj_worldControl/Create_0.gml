@@ -1,7 +1,7 @@
 randomize();
 
 global.score = 0;
-global.salvageParts = 10;
+global.salvageParts = 0;
 
 global.worldControl = id;
 
@@ -83,6 +83,14 @@ function rotateWorld(playerOne, amount){
 		player2Rotation = player2Rotation % 360;
 	}
 }
+
+#endregion
+
+#region Ship Spawning
+
+shipSpawnTimer = 0;
+shipSpawnTime = 100;
+
 #endregion
 
 instance_create_layer(x, y, global.layers[LAYERS.instances], obj_drawControl);
