@@ -33,25 +33,19 @@ if (surface_exists(p1Surf) && surface_exists(p2Surf)){
 	setup_plaid_texture(spr_metalTexture, 0);
 	
 	with(obj_barricade){
-		//if (inP1Cam){
-			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p1AngleToDraw - 90), y - lengthdir_y(radius, p1AngleToDraw - 90), image_xscale * scale, scale, p1AngleToDraw, c_white, image_alpha);	
-		//}
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p1AngleToDraw - 90), y - lengthdir_y(radius, p1AngleToDraw - 90), image_xscale * scale, scale, p1AngleToDraw, c_white, image_alpha);	
 	}
 	
 	setup_plaid_texture(spr_zombieSkinTexture, 0);
 	
 	with(obj_zombie){
-		//if (inP1Cam){
-			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p1AngleToDraw - 90), y - lengthdir_y(radius, p1AngleToDraw - 90), image_xscale * scale, scale, p1AngleToDraw, c_white, image_alpha);	
-		//}
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p1AngleToDraw - 90), y - lengthdir_y(radius, p1AngleToDraw - 90), image_xscale * scale, scale, p1AngleToDraw, c_white, image_alpha);	
 	}
 	
 	setup_plaid_texture(spr_skinTexture, 0);
 	
 	with(obj_player){
-		//if (inP1Cam){
-			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p1AngleToDraw - 90), y - lengthdir_y(radius, p1AngleToDraw - 90), image_xscale * scale, scale, p1AngleToDraw, c_white, image_alpha);	
-		//}
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p1AngleToDraw - 90), y - lengthdir_y(radius, p1AngleToDraw - 90), image_xscale * scale, scale, p1AngleToDraw, c_white, image_alpha);	
 	}
 	surface_reset_target();
 	
@@ -59,25 +53,19 @@ if (surface_exists(p1Surf) && surface_exists(p2Surf)){
 	setup_plaid_texture(spr_metalTexture, 0);
 	
 	with(obj_barricade){
-		//if (inP2Cam){
 			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
-		//}
 	}
 	
 	setup_plaid_texture(spr_zombieSkinTexture, 0);
 	
 	with(obj_zombie){
-		//if (inP2Cam){
-			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
-		//}
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
 	}
 	
 	setup_plaid_texture(spr_skinTexture, 0);
 	
 	with(obj_player){
-		//if (inP2Cam){
-			draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
-		//}
+		draw_sprite_ext(sprite_index, image_index, x - lengthdir_x(radius, p2AngleToDraw - 90), y - lengthdir_y(radius, p2AngleToDraw - 90), image_xscale * scale, scale, p2AngleToDraw, c_white, image_alpha);	
 	}
 	surface_reset_target();
 	
@@ -88,6 +76,31 @@ if (surface_exists(p1Surf) && surface_exists(p2Surf)){
 
 	
 	shader_reset();
+	
+	//Debug.
+	surface_set_target(p1Surf);
+		with(obj_player){
+			draw_text_transformed(x - lengthdir_x(radius, p1AngleToDraw - 90) - (string_width(id) / 2), y - lengthdir_y(radius, p1AngleToDraw - 90) - 80, string(id), 1, 1, p1AngleToDraw);	
+		}
+		
+		with(obj_zombie){
+			var idString = instance_exists(nearestTarget) ? nearestTarget.id : -4;
+			draw_text_transformed(x - lengthdir_x(radius, p1AngleToDraw - 90) - (string_width(idString) / 2), y - lengthdir_y(radius, p1AngleToDraw - 90) - 80, string(idString), 1, 1, p1AngleToDraw);	
+		}
+	surface_reset_target();
+	
+	surface_set_target(p2Surf);
+		with(obj_player){
+			draw_text_transformed(x - lengthdir_x(radius, p2AngleToDraw - 90) - (string_width(id) / 2), y - lengthdir_y(radius, p2AngleToDraw - 90) - 80, string(id), 1, 1, p2AngleToDraw);	
+		}
+		
+		with(obj_zombie){
+			var idString = instance_exists(nearestTarget) ? nearestTarget.id : -4;
+			draw_text_transformed(x - lengthdir_x(radius, p2AngleToDraw - 90) - (string_width(idString) / 2), y - lengthdir_y(radius, p2AngleToDraw - 90) - 80, string(idString), 1, 1, p2AngleToDraw);	
+		}
+	surface_reset_target();
+	
+	
 	
 	draw_surface(p1Surf, (-global.worldControl.ww * 2) - (global.worldControl.ww / 2), 0);
 	draw_surface(p2Surf, (global.worldControl.ww * 2) - (global.worldControl.ww / 2), 0);

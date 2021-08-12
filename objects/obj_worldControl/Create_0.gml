@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+randomize();
 global.worldControl = id;
 
 ww = window_get_width();
@@ -88,5 +89,3 @@ alarm[0] = 60;
 
 
 time = current_time;
-
-audio_play_sound(snd_barrierDamage1, 1, false);

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 if (!firstPlayer){
-	var newInstance = instance_create_layer(x, y, global.layers[LAYERS.instances], obj_barricade);
+	var newInstance = instance_create_layer(x, y, global.layers[LAYERS.instances], obj_zombie);
 
 	newInstance.image_angle = image_angle;
 	newInstance.image_xscale = image_xscale;
