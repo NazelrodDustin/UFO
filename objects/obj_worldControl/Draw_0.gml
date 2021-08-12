@@ -9,7 +9,7 @@ if (surface_exists(groundSurface)){
 }else{
 
 	var steps = 512;
-	var radius = ww * 10;
+	var radius = yy;
 	var startOffset = floor(point_direction(xx, yy, ww, hh));
 	var drawAmount = 180 - (startOffset * 2);
 	var tempGroundSurface = surface_create(ww, (hh / 4) + 5);

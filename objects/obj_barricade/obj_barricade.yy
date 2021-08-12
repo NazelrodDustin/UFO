@@ -4,7 +4,7 @@
     "path": "sprites/spr_baricade/spr_baricade.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

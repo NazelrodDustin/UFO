@@ -4,13 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
-show_debug_message("Hit Before");
-
-
 plaidTexture = spr_skinTexture;
 widthTarget = 64;
 
-image_index = 9;
 
 firstPlayer = true;
 state = "idle";
@@ -68,4 +64,3 @@ function changeState(newState){
 		
 	}
 }
-show_debug_message("Hit After");

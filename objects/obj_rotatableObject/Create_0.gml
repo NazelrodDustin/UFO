@@ -1,10 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-show_debug_message("Hit Before");
-x = round(window_get_width() / 2);
-y = round((window_get_width() * 10) + (window_get_height() * .75));
+x = round(global.worldControl.xx);
+y = round(global.worldControl.yy + (global.worldControl.hh * (3 / 4)));
 
-radius = (window_get_width() * 10);
+radius = (global.worldControl.yy);
 
 plaidTexture = spr_defaultTexture;
 widthTarget = 32;
@@ -19,4 +18,4 @@ p1AngleToDraw = 0;
 p2AngleToDraw = 0;
 
 circumference = pi * 2 * radius;
-show_debug_message("Hit After");
+

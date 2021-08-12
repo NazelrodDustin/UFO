@@ -2,6 +2,12 @@
 // You can write your code in this editor
 event_inherited();
 
+if (firstPlayer){
+	//leftPressed = true;	
+}else{
+	//rightPressed = true;
+}
+
 var moveAmt = 0;
 if (leftPressed){
 	if (firstPressed == "none"){
@@ -59,8 +65,17 @@ if (!leftPressed && !rightPressed){
 	}
 	firstPressed = "none";
 }
+//moveAmt *= 8;
 
 image_angle += moveAmt;
+if (abs(image_angle) > 360){
+	image_angle = image_angle % 360;
+	if (firstPlayer){
+		global.worldControl.player1Rotation -= sign(global.worldControl.player1Rotation) * 360;
+	}else{
+		global.worldControl.player2Rotation -= sign(global.worldControl.player2Rotation) * 360;
+	}
+}
 if (moveAmt != 0){
 	var screenRotation = image_angle + (firstPlayer ? global.worldControl.player1Rotation : global.worldControl.player2Rotation); 
 	if ((screenRotation >= global.worldControl.moveLeftBound && moveAmt > 0) || (screenRotation <= global.worldControl.moveRightBound && moveAmt < 0)){
@@ -102,4 +117,11 @@ if (state == "resurecting"){
 
 if (instance_number(object_index) == 1){
 	instance_create_layer(x, y, global.layers[LAYERS.instances], object_index);
+}
+	
+if (firstPlayer){
+	//var newInstance = instance_create_layer(x, y, global.layers[LAYERS.instances], obj_barricade);
+
+	//newInstance.image_angle = image_angle;
+	//newInstance.image_xscale = image_xscale;
 }

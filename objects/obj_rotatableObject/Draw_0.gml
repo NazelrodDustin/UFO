@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+/*
 shader_set(shd_unmovingPlaid);
 setup_plaid_texture(plaidTexture, 0);
 

@@ -5,7 +5,7 @@ global.worldControl = id;
 ww = window_get_width();
 hh = window_get_height();
 xx = ww / 2;
-yy = (ww * 10);
+yy = (ww * 2);
 
 gamePaused = false;
 twoPlayer = false;
@@ -19,10 +19,6 @@ moveRightBound = point_direction(xx, yy, ww * (3 / 4), hh / 2) - 90;
 groundSurface = noone;
 
 connected = false;
-
-
-
-
 
 #region //Layers
 enum LAYERS{
@@ -85,5 +81,7 @@ function rotateWorld(playerOne, amount){
 	}
 }
 #endregion
+
+instance_create_layer(x, y, global.layers[LAYERS.instances], obj_drawControl);
 
 alarm[0] = 60;
