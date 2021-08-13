@@ -99,3 +99,56 @@ alarm[0] = 60;
 
 
 time = current_time;
+
+B = false;
+KB = false;
+MB = false;
+GB = false;
+TB = false;
+PB = false;
+EB = false;
+ZB = false;
+YB = false;
+
+scoreb = 0;
+scoreB = 0;
+scoreKB = 0;
+scoreMB = 0;
+scoreGB = 0;
+scoreTB = 0;
+scorePB = 0;
+scoreEB = 0;
+scoreZB = 0;
+scoreYB = 0;
+
+function getBiggestSize(){
+	var returnVal = "b";
+	returnVal = B ? "B" : returnVal;
+	returnVal = KB ? "KB" : returnVal;
+	returnVal = MB ? "MB" : returnVal;
+	returnVal = GB ? "GB" : returnVal;
+	returnVal = TB ? "TB" : returnVal;
+	returnVal = PB ? "PB" : returnVal;
+	returnVal = EB ? "EB" : returnVal;
+	returnVal = ZB ? "ZB" : returnVal;
+	returnVal = YB ? "YB" : returnVal;
+	return returnVal;
+}
+
+function getBiggestSizeValue(){
+	return variable_instance_get(self, "score" + getBiggestSize());
+}
+
+function getSecondBiggestSizeValue(){
+	var returnVal = "b";
+	returnVal = KB ? "B" : returnVal;
+	returnVal = MB ? "KB" : returnVal;
+	returnVal = GB ? "MB" : returnVal;
+	returnVal = TB ? "GB" : returnVal;
+	returnVal = PB ? "TB" : returnVal;
+	returnVal = EB ? "PB" : returnVal;
+	returnVal = ZB ? "EB" : returnVal;
+	returnVal = YB ? "ZB" : returnVal;
+	return variable_instance_get(self, "score" + returnVal);
+}
+

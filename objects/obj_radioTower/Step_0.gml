@@ -1,9 +1,8 @@
 event_inherited();
 
-scoreTimer ++;
+scoreTimer++;
 
 if (scoreTimer >= scoreTime){
-	global.score ++;
+	global.score++;
 	scoreTimer = 0;
 }
-
