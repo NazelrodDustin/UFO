@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"7917d7f4-5a8b-427b-99c1-94eb2a3f6bb5","path":"sprites/spr_baricade/spr_baricade.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"7917d7f4-5a8b-427b-99c1-94eb2a3f6bb5","path":"sprites/spr_baricade/spr_baricade.yy",},"LayerId":{"name":"dbc67e11-54e3-418d-9fe0-fd45646a7a45","path":"sprites/spr_baricade/spr_baricade.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"7917d7f4-5a8b-427b-99c1-94eb2a3f6bb5","path":"sprites/spr_baricade/spr_baricade.yy",},"LayerId":{"name":"29b28a83-7f0f-4aa6-ab2c-80d55ce6ca81","path":"sprites/spr_baricade/spr_baricade.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_baricade","path":"sprites/spr_baricade/spr_baricade.yy",},"resourceVersion":"1.0","name":"7917d7f4-5a8b-427b-99c1-94eb2a3f6bb5","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -65,6 +66,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"29b28a83-7f0f-4aa6-ab2c-80d55ce6ca81","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"dbc67e11-54e3-418d-9fe0-fd45646a7a45","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,

@@ -16,19 +16,10 @@ if (surface_exists(groundSurface)){
 	surface_set_target(tempGroundSurface);
 	draw_clear_alpha(c_black, 0);
 	
-	draw_set_color(c_black);
 	draw_primitive_begin(pr_trianglefan);
 	draw_vertex(xx, yy);
 	for(var i = 0; i <= steps; ++i){
 		draw_vertex(xx + lengthdir_x(radius, startOffset + (drawAmount * i / steps)), yy + lengthdir_y(radius, startOffset + (drawAmount * i / steps)));
-	}
-	draw_primitive_end();
-	draw_set_color(c_white);
-	
-	draw_primitive_begin(pr_trianglefan);
-	draw_vertex(xx, yy);
-	for(var i = 0; i <= steps; ++i){
-		draw_vertex(xx + lengthdir_x(radius - 3, startOffset + (drawAmount * i / steps)), yy + lengthdir_y(radius - 3, startOffset + (drawAmount * i / steps)));
 	}
 	draw_primitive_end();
 	surface_reset_target();

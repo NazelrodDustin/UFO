@@ -7,8 +7,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "Songs",
+    "path": "audiogroups/Songs",
   },
   "soundFile": "snd_ambience.mp3",
   "duration": 72.64653,

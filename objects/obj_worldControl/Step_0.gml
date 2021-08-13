@@ -3,7 +3,7 @@
 //time = current_time;
 
 //Ship spawning
-shipSpawnTimer ++;
+/*shipSpawnTimer ++;
 
 if (shipSpawnTimer >= shipSpawnTime){
 	shipSpawnTimer = 0;

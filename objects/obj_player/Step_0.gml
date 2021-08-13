@@ -5,79 +5,79 @@ if (firstPlayer){
 }else{
 	//rightPressed = true;
 }
-
-var moveAmt = 0;
-if (leftPressed){
-	if (firstPressed == "none"){
-		firstPressed = "left";
-	}
-	
-	if (firstPressed == "right"){
-		if (!rightPressed){
-			firstPressed = "none";	
+if (state != "dying" && state != "dead" && state != "resurecting"){
+	var moveAmt = 0;
+	if (leftPressed){
+		if (firstPressed == "none"){
+			firstPressed = "left";
 		}
+	
+		if (firstPressed == "right"){
+			if (!rightPressed){
+				firstPressed = "none";	
+			}
 		
-		moveAmt = 0;
+			moveAmt = 0;
+			if (state != "idle"){
+				changeState("idle");
+			}
+		}else if (firstPressed == "left"){
+			if (!rightPressed){
+				moveAmt = moveAngle;
+				if (state != "moving"){
+					changeState("moving");
+				}
+				image_xscale = -1;
+			}
+		}
+	}
+
+	if (rightPressed){
+		if (firstPressed == "none"){
+			firstPressed = "right";
+		}
+	
+		if (firstPressed == "left"){
+			if (!leftPressed){
+				firstPressed = "none";	
+			}
+		
+			moveAmt = 0;
+			if (state != "idle"){
+				changeState("idle");
+			}
+		}else if (firstPressed == "right"){
+			if (!leftPressed){
+				moveAmt = -moveAngle;
+				if (state != "moving"){
+					changeState("moving");
+				}
+				image_xscale = 1;
+			}
+		}
+	}
+
+	if (!leftPressed && !rightPressed){
 		if (state != "idle"){
 			changeState("idle");
 		}
-	}else if (firstPressed == "left"){
-		if (!rightPressed){
-			moveAmt = moveAngle;
-			if (state != "moving"){
-				changeState("moving");
-			}
-			image_xscale = -1;
-		}
+		firstPressed = "none";
 	}
-}
 
-if (rightPressed){
-	if (firstPressed == "none"){
-		firstPressed = "right";
-	}
-	
-	if (firstPressed == "left"){
-		if (!leftPressed){
-			firstPressed = "none";	
-		}
-		
-		moveAmt = 0;
-		if (state != "idle"){
-			changeState("idle");
-		}
-	}else if (firstPressed == "right"){
-		if (!leftPressed){
-			moveAmt = -moveAngle;
-			if (state != "moving"){
-				changeState("moving");
-			}
-			image_xscale = 1;
+	image_angle += moveAmt;
+	if (abs(image_angle) > 360){
+		image_angle = image_angle % 360;
+		if (firstPlayer){
+			global.worldControl.player1Rotation -= sign(global.worldControl.player1Rotation) * 360;
+		}else{
+			global.worldControl.player2Rotation -= sign(global.worldControl.player2Rotation) * 360;
 		}
 	}
-}
-
-if (!leftPressed && !rightPressed){
-	if (state != "idle"){
-		changeState("idle");
-	}
-	firstPressed = "none";
-}
-//moveAmt *= 8;
-
-image_angle += moveAmt;
-if (abs(image_angle) > 360){
-	image_angle = image_angle % 360;
-	if (firstPlayer){
-		global.worldControl.player1Rotation -= sign(global.worldControl.player1Rotation) * 360;
-	}else{
-		global.worldControl.player2Rotation -= sign(global.worldControl.player2Rotation) * 360;
-	}
-}
-if (moveAmt != 0){
-	var screenRotation = image_angle + (firstPlayer ? global.worldControl.player1Rotation : global.worldControl.player2Rotation); 
-	if ((screenRotation >= global.worldControl.moveLeftBound && moveAmt > 0) || (screenRotation <= global.worldControl.moveRightBound && moveAmt < 0)){
-		global.worldControl.rotateWorld(firstPlayer, -moveAmt);
+	if (moveAmt != 0){
+		var screenRotation = image_angle + (firstPlayer ? global.worldControl.player1Rotation : global.worldControl.player2Rotation); 
+		if ((screenRotation >= global.worldControl.moveLeftBound && moveAmt > 0) || (screenRotation <= global.worldControl.moveRightBound && moveAmt < 0)){
+			global.worldControl.rotateWorld(firstPlayer, -moveAmt);
+		}
 	}
 }
 
@@ -115,14 +115,6 @@ if (state == "resurecting"){
 if (instance_number(object_index) == 1){
 	instance_create_layer(x, y, global.layers[LAYERS.instances], object_index);
 }
-	
-if (firstPlayer){
-	//var newInstance = instance_create_layer(x, y, global.layers[LAYERS.instances], obj_barricade);
-
-	//newInstance.image_angle = image_angle;
-	//newInstance.image_xscale = image_xscale;
-}
-
 
 
 

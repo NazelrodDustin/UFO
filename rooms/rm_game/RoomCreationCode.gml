@@ -9,7 +9,7 @@ surface_depth_disable(true);
 
 instance_create_layer(0, 0, layer_get_id("Instances"), obj_worldControl);
 instance_create_layer(0, 0, layer_get_id("Instances"), obj_soundControl);
-instance_create_layer(-10, 0, layer_get_id("Instances"), obj_ufo);
 instance_create_layer(0, 0, layer_get_id("Instances"), obj_player);
+instance_create_layer(-10, 0, layer_get_id("Instances"), obj_ufo);
 
 //0A0719

@@ -11,7 +11,7 @@ xx = ww / 2;
 yy = (ww * 2);
 
 gamePaused = false;
-twoPlayer = false;
+twoPlayer = true;
 
 player1Rotation = 0;
 player2Rotation = 0;

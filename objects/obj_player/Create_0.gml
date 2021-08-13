@@ -18,6 +18,11 @@ circumference = pi * 2 * radius;
 
 moveAngle = (moveAmount / circumference) * 360;
 
+myHealth = 100;
+attackSound	= obj_soundControl.soundLaserRifle;
+damageSound = obj_soundControl.soundPlayerHurt;
+destroySound = obj_soundControl.soundPlayerDeath;
+reviveSound = obj_soundControl.soundPlayerSpawn;
 
 if (instance_number(object_index) > 1){
 	firstPlayer = false;	
@@ -46,6 +51,7 @@ function changeState(newState){
 		case "dying":
 			image_index = 0;
 			image_speed = 1;
+			sound_effect_play(destroySound, false);
 			break;
 		
 		case "dead":
@@ -56,6 +62,7 @@ function changeState(newState){
 		case "resurecting":
 			image_index = 7;
 			image_speed = -1;
+			audio_play_sound(resurectSound, 10, false);
 			break;
 		
 	}
