@@ -3,12 +3,11 @@
 //time = current_time;
 
 //Ship spawning
-
-//shipSpawnTimer ++;
+shipSpawnTimer ++;
 
 if (shipSpawnTimer >= shipSpawnTime){
 	shipSpawnTimer = 0;
 	
-	var ship = instance_create_layer(irandom(1000), 0, layer_get_id("Instances"), obj_ufo);
+	var ship = instance_create_layer(0, 0, layer_get_id("Instances"), obj_ufo);
 	ship.image_angle = irandom(360);
 }
