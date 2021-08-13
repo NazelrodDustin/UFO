@@ -98,8 +98,12 @@ shipSpawnTime = 100;
 starSurface = -1;
 starSurfaceUpdate = true;
 numberOfStars = 5000;
-starFieldWidth = window_get_width() + 256;
-starFieldHeight = window_get_height() + 256;
+starFieldWidth = round(window_get_width() * 2.5);
+starFieldHeight = round(window_get_height() * 2.5);
+starAlpha = 1;
+starAngle = 0;
+starAngleP2 = 0;
+starSprite = -1;
 
 star = function(_x, _y) constructor{
 	x = _x;
