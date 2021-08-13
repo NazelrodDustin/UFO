@@ -4,6 +4,7 @@
     {"id":{"name":"snd_radioTowerSpawn1","path":"sounds/snd_radioTowerSpawn1/snd_radioTowerSpawn1.yy",},"order":10,},
     {"id":{"name":"snd_ambience","path":"sounds/snd_ambience/snd_ambience.yy",},"order":13,},
     {"id":{"name":"snd_playerHurt2","path":"sounds/snd_playerHurt2/snd_playerHurt2.yy",},"order":1,},
+    {"id":{"name":"spr_stars","path":"sprites/spr_stars/spr_stars.yy",},"order":9,},
     {"id":{"name":"snd_laserRifle2","path":"sounds/snd_laserRifle2/snd_laserRifle2.yy",},"order":1,},
     {"id":{"name":"snd_ufoSalvage1","path":"sounds/snd_ufoSalvage1/snd_ufoSalvage1.yy",},"order":12,},
     {"id":{"name":"snd_zombieDying2","path":"sounds/snd_zombieDying2/snd_zombieDying2.yy",},"order":1,},

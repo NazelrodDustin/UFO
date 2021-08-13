@@ -93,6 +93,28 @@ shipSpawnTime = 100;
 
 #endregion
 
+#region Stars
+
+starSurface = -1;
+starSurfaceUpdate = true;
+numberOfStars = 5000;
+starFieldWidth = window_get_width() + 256;
+starFieldHeight = window_get_height() + 256;
+
+star = function(_x, _y) constructor{
+	x = _x;
+	y = _y;
+	col = choose(c_white);
+}
+
+starPosArray = [];
+
+for (var i = 0; i < numberOfStars; i++){
+	starPosArray[i] = new star(irandom(starFieldWidth), irandom(starFieldHeight));	
+}
+
+#endregion
+
 instance_create_layer(x, y, global.layers[LAYERS.instances], obj_drawControl);
 
 alarm[0] = 60;
