@@ -37,6 +37,7 @@
     {"id":{"name":"snd_zombieDying4","path":"sounds/snd_zombieDying4/snd_zombieDying4.yy",},"order":3,},
     {"id":{"name":"spr_radioTower","path":"sprites/spr_radioTower/spr_radioTower.yy",},"order":6,},
     {"id":{"name":"snd_zombieDying1","path":"sounds/snd_zombieDying1/snd_zombieDying1.yy",},"order":0,},
+    {"id":{"name":"spr_musicMute","path":"sprites/spr_musicMute/spr_musicMute.yy",},"order":8,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"spr_groundTexture","path":"sprites/spr_groundTexture/spr_groundTexture.yy",},"order":0,},
     {"id":{"name":"snd_playerDeath1","path":"sounds/snd_playerDeath1/snd_playerDeath1.yy",},"order":7,},
