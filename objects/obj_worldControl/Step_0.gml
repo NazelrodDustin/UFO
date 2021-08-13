@@ -1,10 +1,10 @@
-show_debug_message("Frame length:" + string(current_time - time));
+//show_debug_message("Frame length:" + string(current_time - time));
 
-time = current_time;
+//time = current_time;
 
 //Ship spawning
 
-shipSpawnTimer ++;
+//shipSpawnTimer ++;
 
 if (shipSpawnTimer >= shipSpawnTime){
 	shipSpawnTimer = 0;

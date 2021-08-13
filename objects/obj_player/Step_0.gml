@@ -1,10 +1,8 @@
-event_inherited();
+
 
 if (firstPlayer){
-	inP1Cam = true;
-	leftPressed = true;	
+	//leftPressed = true;	
 }else{
-	inP2Cam = true;
 	//rightPressed = true;
 }
 
@@ -124,3 +122,8 @@ if (firstPlayer){
 	//newInstance.image_angle = image_angle;
 	//newInstance.image_xscale = image_xscale;
 }
+
+
+
+
+event_inherited();

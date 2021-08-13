@@ -3,4 +3,4 @@
 alarm[0] = 60;
 
 connected = os_is_network_connected();
-show_debug_message(connected);
+//show_debug_message(connected);

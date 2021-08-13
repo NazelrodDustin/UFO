@@ -1,4 +1,4 @@
-
+/*
 if (!audio_is_playing(snd_song) && playSong){
 	song = audio_play_sound(snd_song, 9999, false);
 	audio_sound_gain(song, 1, 10);	
