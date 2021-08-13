@@ -110,7 +110,7 @@ function sound_effect_play(arrayId, loop){
 			break;
 		}
 	}
-
+    audio_get_listener_count()
 	//Play the sound 
 	var soundEffect = audio_play_sound(soundToPlay, priority, loop); 
 	audio_sound_gain(soundEffect, volRandomized, 0);

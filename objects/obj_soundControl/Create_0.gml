@@ -1,5 +1,6 @@
 #region Create varied samples
 
+audio_channel_num(64);
 
 if (!audio_group_is_loaded(SFX)){
 	audio_group_load(SFX);
@@ -11,10 +12,10 @@ if (!audio_group_is_loaded(Songs)){
 
 
 
-soundBarrierDamage = sound_effect_create("snd_barrierDamage", 1, .1, .01, 500);
-soundBarrierPlace = sound_effect_create("snd_barrierPlace", 1, .1, .01, 10);
+soundBarrierDamage = sound_effect_create("snd_barrierDamage", .2, .1, .01, 100);
+soundBarrierPlace = sound_effect_create("snd_barrierPlace", 1, .1, .01, 100);
 soundFootstep = sound_effect_create("snd_footstep", 1, .1, .01, 70);
-soundLaserRifle = sound_effect_create("snd_laserRifle", 1, .1, .01, 20);	
+soundLaserRifle = sound_effect_create("snd_laserRifle", 1, .1, .01, 400);	
 soundPlayerHurt = sound_effect_create("snd_playerHurt", 1, .1, .01, 700);
 soundZombieDying = sound_effect_create("snd_zombieDying", 1, .1, .01, 5);
 soundZombieGeneral = sound_effect_create("snd_zombieGeneral", 1, .1, .01, 1);

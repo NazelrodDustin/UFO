@@ -6,3 +6,6 @@ event_inherited();
 
 plaidTexture = spr_metalTexture;
 widthTarget = 64;
+
+damageSound = obj_soundControl.soundBarrierDamage;
+destroySound = obj_soundControl.soundBarrierDamage;
