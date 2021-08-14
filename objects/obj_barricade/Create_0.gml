@@ -8,6 +8,7 @@ plaidTexture = spr_metalTexture;
 widthTarget = 64;
 
 myHealth = 250;
+maxHealth = myHealth;
 
 damageSound = obj_soundControl.soundBarrierDamage;
 destroySound = obj_soundControl.soundBarrierDamage;

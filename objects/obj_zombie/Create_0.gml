@@ -17,6 +17,9 @@ nearestTarget = noone;
 nearestTargetDistance = infinity;
 wanderDirection = 0;
 
+myHealth = irandom_range(50, 100);
+maxHealth = myHealth;
+
 attackSound	= obj_soundControl.soundZombieDying;
 damageSound = obj_soundControl.soundZombieDying;
 destroySound = obj_soundControl.soundZombieGeneral;

@@ -14,60 +14,60 @@ if (shipSpawnTimer >= shipSpawnTime){
 
 */
 
-if (global.score >= 1){
+while (global.score >= 1){
 	global.score--;
 	scoreb++;
 }
 
-if (scoreb >= 8){
+while (scoreb >= 8){
 	scoreb -= 8;
 	scoreB++;
 	B = true;
 }
 
-if (scoreB >= 1024){
+while (scoreB >= 1024){
 	scoreB -= 1024;
 	scoreKB++;
 	KB = true;
 }
 
-if (scoreKB >= 1024){
+while (scoreKB >= 1024){
 	scoreKB -= 1024;
 	scoreMB++;
 	MB = true;
 }
 
-if (scoreMB >= 1024){
+while (scoreMB >= 1024){
 	scoreMB -= 1024;
 	scoreGB++;
 	GB = true;
 }
 
-if (scoreGB >= 1024){
+while (scoreGB >= 1024){
 	scoreGB -= 1024;
 	scoreTB++;
 	TB = true;
 }
 
-if (scoreTB >= 1024){
+while (scoreTB >= 1024){
 	scoreTB -= 1024;
 	scorePB++;
 	PB = true;
 }
 
-if (scorePB >= 1024){
+while (scorePB >= 1024){
 	scorePB -= 1024;
 	scoreEB++;
 	EB = true;
 }
 
-if (scoreEB >= 1024){
+while (scoreEB >= 1024){
 	scoreEB -= 1024;
 	scoreZB++;
 	ZB = true;
 }
 
-if (scoreZB >= 1024){
+while (scoreZB >= 1024){
 	scoreZB -= 1024;
 	scoreYB++;
 	YB = true;

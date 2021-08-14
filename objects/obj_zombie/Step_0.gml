@@ -3,83 +3,84 @@
 
 // Inherit the parent event
 event_inherited();
-var moveAmt = 0;
-if (nearestTarget == noone){
-	if (wanderDirection != 0){
-		if (state != "moving"){
-			changeState("moving");
-		}
-	}else{
-		if (state != "idle"){
-			changeState("idle");
-		}
-	}
-	moveAmt += wanderDirection;
-}else{
-	if (instance_exists(nearestTarget)){
-		nearestTargetDistance = abs(nearestTarget.p1AngleToDraw - p1AngleToDraw);
-		
-		var nearestTargetOffset = nearestTargetDistance + (nearestTarget.zombieAttackOffset * (nearestTarget.p1AngleToDraw > p1AngleToDraw ? -1 : 1));
-		if (abs(nearestTargetOffset) < moveAngle || abs(nearestTargetDistance) < nearestTarget.zombieAttackOffset){
-			if (image_index == 14){
-				image_angle = nearestTarget.image_angle + (image_xscale * nearestTarget.zombieAttackOffset * .99);
-			}			
-			
-			if (state != "attacking"){
-				changeState("attacking");
+if (state != "dying" && state != "dead"){
+	var moveAmt = 0;
+	if (nearestTarget == noone){
+		if (wanderDirection != 0){
+			if (state != "moving"){
+				changeState("moving");
 			}
 		}else{
-			if (state != "movingToTarget"){
-				changeState("movingToTarget");
+			if (state != "idle"){
+				changeState("idle");
 			}
 		}
+		moveAmt += wanderDirection;
+	}else{
+		show_debug_message("Hit Before");
+		if (instance_exists(nearestTarget)){
+			nearestTargetDistance = getAngle(nearestTarget);
 		
-		with (obj_barricade){
-			if (other.nearestTarget.object_index == obj_player){
-				distanceToMe1 = other.p1AngleToDraw - p1AngleToDraw + zombieAttackOffset;
-				distanceToMe2 = other.p1AngleToDraw - p1AngleToDraw - zombieAttackOffset;
-				distanceToMe = other.p1AngleToDraw - p1AngleToDraw;
-				distanceToTarget = other.p1AngleToDraw - other.nearestTarget.p1AngleToDraw;
+			var nearestTargetOffset = nearestTargetDistance + (nearestTarget.zombieAttackOffset * (nearestTarget.p1AngleToDraw > p1AngleToDraw ? -1 : 1));
+			if (abs(nearestTargetOffset) < moveAngle || abs(nearestTargetDistance) < nearestTarget.zombieAttackOffset){
+				if (image_index == 14){
+					image_angle = nearestTarget.image_angle + (image_xscale * nearestTarget.zombieAttackOffset * .99);
+				}			
+			
+				if (state != "attacking"){
+					changeState("attacking");
+				}
+			}else{
+				if (state != "movingToTarget"){
+					changeState("movingToTarget");
+				}
+			}
+		
+			with (obj_barricade){
+				if (other.nearestTarget.object_index == obj_player){
+					distanceToMe = getAngle(other)
+					distanceToTarget = other.p1AngleToDraw - other.nearestTarget.p1AngleToDraw;
 				
-				if (sign(distanceToMe) == sign(distanceToTarget)){
-					if (abs(distanceToMe) < abs(distanceToTarget)){
-						other.nearestTarget	= id;
+					if (sign(distanceToMe) == sign(distanceToTarget)){
+						if (abs(distanceToMe) < abs(distanceToTarget)){
+							other.nearestTarget	= id;
+						}
 					}
 				}
 			}
-		}
 		
 
-		if (state = "movingToTarget"){	
-			var moveDirection = sign(nearestTarget.p1AngleToDraw - p1AngleToDraw);
-			moveAmt = moveDirection * moveAngle;
+			if (state = "movingToTarget"){	
+				var moveDirection = sign(nearestTarget.p1AngleToDraw - p1AngleToDraw);
+				moveAmt = moveDirection * moveAngle;
 			
-			var targetDead = false;
-			if (nearestTarget.object_index == obj_player){
-				targetDead = nearestTarget.state == "dying" || nearestTarget.state == "dead" || nearestTarget.state == "resurecting";	
+				var targetDead = false;
+				if (nearestTarget.object_index == obj_player){
+					targetDead = nearestTarget.state == "dying" || nearestTarget.state == "dead" || nearestTarget.state == "resurecting";	
+				}
+		
+				if (nearestTargetDistance > vision || targetDead){
+					nearestTarget = noone;
+					nearestTargetDistance = infinity;
+				}
 			}
 		
-			if (nearestTargetDistance > vision || targetDead){
-				nearestTarget = noone;
-				nearestTargetDistance = infinity;
-			}
+			show_debug_message("Hit After");
+
+		
+		}else{
+			alarm[1] = 1;
+			nearestTarget = noone;
+			nearestTargetDistance = infinity;
 		}
-		
-		
-
-		
-	}else{
-		alarm[1] = 1;
-		nearestTarget = noone;
-		nearestTargetDistance = infinity;
+	
 	}
-}
 
-if (moveAmt != 0){
-	image_xscale = -1 * sign(moveAmt);
+	if (moveAmt != 0){
+		image_xscale = -1 * sign(moveAmt);
+	}
+	image_angle += moveAmt;
 }
-image_angle += moveAmt;
-
 
 
 #region Anim Control

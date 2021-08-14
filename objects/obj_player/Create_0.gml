@@ -19,6 +19,10 @@ circumference = pi * 2 * radius;
 moveAngle = (moveAmount / circumference) * 360;
 
 myHealth = 100;
+maxHealth = myHealth;
+addHealthTimer = 0
+addHealthTime = 100;
+
 attackSound	= obj_soundControl.soundLaserRifle;
 damageSound = obj_soundControl.soundPlayerHurt;
 destroySound = obj_soundControl.soundPlayerDeath;

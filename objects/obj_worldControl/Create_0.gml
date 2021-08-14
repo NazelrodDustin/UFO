@@ -11,7 +11,7 @@ xx = ww / 2;
 yy = (ww * 2);
 
 gamePaused = false;
-twoPlayer = true;
+twoPlayer = false;
 
 player1Rotation = 0;
 player2Rotation = 0;
@@ -54,9 +54,9 @@ global.shaderUniforms[SHADERS.unmovingPlaid] = [shader_get_sampler_index(shd_unm
 view_enabled = true;
 
 view_visible[0] = true;
-view_visible[1] = true;
+view_visible[1] = false;
 
-view_camera[0] = camera_create_view((-ww * 2) - (ww / 2), hh / 2, ww, hh / 2);
+view_camera[0] = camera_create_view((-ww * 2) - (ww / 2), 0, ww, hh);
 view_camera[1] = camera_create_view((ww * 2) - (ww / 2), hh / 2, ww, hh / 2);
 
 view_xport[0] = 0;
@@ -68,7 +68,7 @@ view_yport[1] = hh / 2;
 view_wport[0] = ww;
 view_wport[1] = ww;
 
-view_hport[0] = hh / 2;
+view_hport[0] = hh;
 view_hport[1] = hh / 2;
 #endregion
 
@@ -98,8 +98,8 @@ shipSpawnTime = 100;
 starSurface = -1;
 starSurfaceUpdate = true;
 numberOfStars = 5000;
-starFieldWidth = round(window_get_width() * 2.5);
-starFieldHeight = round(window_get_height() * 2.5);
+starFieldWidth = ww * 5;
+starFieldHeight = ww * 5;
 starAlpha = 1;
 starAngle = 0;
 starAngleP2 = 0;
@@ -178,3 +178,5 @@ function getSecondBiggestSizeValue(){
 	return variable_instance_get(self, "score" + returnVal);
 }
 
+alarm[1] = 600;
+alarm[2] = 1200;

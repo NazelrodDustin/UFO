@@ -6,3 +6,6 @@ event_inherited();
 
 plaidTexture = spr_metalTexture;
 widthTarget = 128;
+
+myHealth = 50;
+maxHealth = myHealth;

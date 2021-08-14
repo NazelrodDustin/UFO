@@ -41,7 +41,7 @@ playSong = true;
 ambienceTransitionTime = round(songLength / 12);
 ambienceTransitionPoint = songLength - ambienceTransitionTime;
 ambience = -1;
-mute = true;
+mute = false;
 
 songAmbLevel = .8;
 global.sfxLevel = .8;

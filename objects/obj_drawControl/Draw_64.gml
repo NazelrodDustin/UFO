@@ -4,4 +4,4 @@ var middleX = (window_get_width() / 2);
 
 draw_text(middleX, 35, global.scoreData);
 
-draw_text(middleX, 75, global.score);
+draw_text(middleX, 75, !global.showCantPlaceMsg ? "Scrap: " + string(global.salvageParts) : "Not Enough Scrap");

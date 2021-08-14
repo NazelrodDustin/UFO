@@ -30,15 +30,28 @@ function takeDamage(damage){
 		if (object_index != obj_player && object_index != obj_zombie){
 			instance_destroy();
 		}else{
-			changeState("dying");	
+			if (state != "dying" && state != "dead"){
+				changeState("dying");	
+			}
 		}
 	}
 	
 	if (object_index != obj_player && object_index != obj_zombie){
 		sound_effect_play(myHealth < 0 ? destroySound : damageSound, false);
 	}else{
+		if (object_index == obj_player){
+			addHealthTimer = -1000;	
+		}
 		if (myHealth > 0){
 			sound_effect_play(damageSound, false);
 		}
 	}
+}
+
+function getAngle(object){
+	var a1 = abs(p1AngleToDraw - object.p1AngleToDraw);
+	var a2 = abs((p1AngleToDraw + 360) - object.p1AngleToDraw);
+	var a3 = abs(p1AngleToDraw - (object.p1AngleToDraw + 360));
+	
+	return min(a1, a2, a3);
 }

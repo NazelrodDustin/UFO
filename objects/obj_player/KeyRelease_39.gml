@@ -1,3 +1,0 @@
-if (!firstPlayer){
-	rightPressed = false;
-}

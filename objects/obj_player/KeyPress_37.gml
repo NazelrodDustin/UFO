@@ -1,3 +1,0 @@
-if (!firstPlayer){
-	leftPressed = true;
-}

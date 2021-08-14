@@ -28,10 +28,7 @@ void main(){
 		finalColor = vec4(0.0, 0.0, 0.0, 1.0);
 	}
 	
-
-	if (color.a < 0.05){
-		finalColor = vec4(0.0, 0.0, 0.0, 0.0);
-	}
+	finalColor.a = color.a;
 	
     gl_FragColor = finalColor;
 }

@@ -112,10 +112,17 @@ if (state == "resurecting"){
 }
 #endregion
 
-if (instance_number(object_index) == 1){
-	instance_create_layer(x, y, global.layers[LAYERS.instances], object_index);
-}
+//if (instance_number(object_index) == 1){
+//	instance_create_layer(x, y, global.layers[LAYERS.instances], object_index);
+//}
 
+if (addHealthTimer >= addHealthTime){
+	myHealth += 1;
+	addHealthTimer = 0;
+	if (myHealth > maxHealth){
+		myHealth = maxHealth;	
+	}
+}
 
 
 event_inherited();
