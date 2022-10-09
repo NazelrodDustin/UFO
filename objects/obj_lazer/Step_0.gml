@@ -13,6 +13,8 @@ circumference = pi * 2 * radius;
 
 moveAngle = (moveAmount / circumference) * 360;
 
+show_debug_message(moveAmount);
+
 with (obj_zombie){
 	if (state != "dying" && state != "dead"){
 		angle = getAngle(other);

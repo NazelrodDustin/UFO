@@ -1,10 +1,4 @@
 
-
-if (firstPlayer){
-	//leftPressed = true;	
-}else{
-	//rightPressed = true;
-}
 if (state != "dying" && state != "dead" && state != "resurecting"){
 	var moveAmt = 0;
 	if (leftPressed){

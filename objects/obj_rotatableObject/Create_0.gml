@@ -5,7 +5,7 @@ y = round(global.worldControl.yy + (global.worldControl.hh * (3 / 4)));
 
 radius = (global.worldControl.yy);
 
-plaidTexture = spr_defaultTexture;
+plaidTexture = spr_skinTexture;
 widthTarget = 32;
 scale = 0;
 myHealth = infinity;
@@ -15,10 +15,7 @@ alarm[0] = 1;
 ww = global.worldControl.ww;
 hh = global.worldControl.hh;
 
-p1AngleToDraw = 0;
-p2AngleToDraw = 0;
 
-circumference = pi * 2 * radius;
 
 zombieAttackOffset = 0;
 damageSound = noone;

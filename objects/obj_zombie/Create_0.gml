@@ -12,7 +12,6 @@ vision = 5;
 soundDropOff = 25;
 moveAmount = random_range(2, 5);
 moveAngle = (moveAmount / circumference) * 360;
-realMoveAmount = 0;
 nearestTarget = noone;
 nearestTargetDistance = infinity;
 wanderDirection = 0;
